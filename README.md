@@ -1,16 +1,56 @@
-# flutter_buddy_search_clean_architecture_bloc
+# 📱 Buddy Search Clean Architecture BLoC
 
-A new Flutter project.
+**Buddy Search** is a demonstration Flutter application created to illustrate the principles of Clean Architecture and the use of the BLoC pattern for state management. The primary goal of the project is to show how to structure a Flutter application by dividing it into data, domain, and presentation layers, ensuring modularity, testability, and scalability.
 
-## Getting Started
+---
 
-This project is a starting point for a Flutter application.
+## 🏗 Application Architecture
 
-A few resources to get you started if this is your first Flutter project:
+The project is divided into three main layers:
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+### 1. Presentation Layer
+- **Components**: Widgets, pages, BLoC.
+- **Responsibility**: Displaying UI and handling user interactions.
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+### 2. Domain Layer
+- **Components**: Entities, use cases, repositories.
+- **Responsibility**: Business logic and application rules.
+
+### 3. Data Layer
+- **Components**: Data sources, models, repository implementations.
+- **Responsibility**: Managing data and interacting with external sources.
+- 
+---
+
+## 🔄 Data Flow Between Layers
+
+1. **Presentation Layer** initiates requests through BLoC.
+2. **BLoC** interacts with corresponding **Use Cases** from the domain layer.
+3. **Use Cases** access repository interfaces defined in the domain layer.
+4. **Repository Implementations** in the data layer interact with specific data sources (e.g., API).
+5. **Data** is returned through the layers to the presentation layer, where it's displayed to the user.
+
+---
+
+## 🧱 Project Structure
+
+lib/
+├── core/                    # Core application logic
+│   ├── constants/           # Constants (e.g., strings, keys)
+│   ├── styles/              # Styles (colors, fonts)
+│   └── widgets/             # Reusable widgets
+├── features/                # Application features
+│   └── buddy_search/        # Buddy search feature
+│       ├── data/            # Data layer
+│       │   ├── datasources/ # Data sources (API, local storage)
+│       │   ├── models/      # Data models
+│       │   └── repositories/ # Repository implementations
+│       ├── domain/          # Domain layer
+│       │   ├── entities/    # Business entities
+│       │   ├── repositories/ # Repository interfaces
+│       │   └── usecases/    # Use cases
+│       └── presentation/    # Presentation layer
+│           ├── bloc/        # BLoC logic
+│           ├── pages/       # UI screens
+│           └── widgets/     # Reusable widgets
+└── main.dart                # Application entry point
