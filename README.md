@@ -34,23 +34,4 @@ The project is divided into three main layers:
 
 ## 🧱 Project Structure
 
-lib/
-├── core/                    # Core application logic
-│   ├── constants/           # Constants (e.g., strings, keys)
-│   ├── styles/              # Styles (colors, fonts)
-│   └── widgets/             # Reusable widgets
-├── features/                # Application features
-│   └── buddy_search/        # Buddy search feature
-│       ├── data/            # Data layer
-│       │   ├── datasources/ # Data sources (API, local storage)
-│       │   ├── models/      # Data models
-│       │   └── repositories/ # Repository implementations
-│       ├── domain/          # Domain layer
-│       │   ├── entities/    # Business entities
-│       │   ├── repositories/ # Repository interfaces
-│       │   └── usecases/    # Use cases
-│       └── presentation/    # Presentation layer
-│           ├── bloc/        # BLoC logic
-│           ├── pages/       # UI screens
-│           └── widgets/     # Reusable widgets
-└── main.dart                # Application entry point
+![Архитектура](docs/architecture.png)
