@@ -35,3 +35,7 @@ The project is divided into three main layers:
 ## 🧱 Project Structure
 
 ![Архитектура](docs/architecture.png)
+
+## 📄 License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
